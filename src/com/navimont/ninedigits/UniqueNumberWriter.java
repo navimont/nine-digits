@@ -1,4 +1,4 @@
-package com.swehner.newrelic;
+package com.navimont.ninedigits;
 
 
 import java.io.BufferedWriter;
@@ -7,15 +7,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.BitSet;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.swehner.newrelic.threadpool.Shutdownable;
+import com.navimont.ninedigits.threadpool.Shutdownable;
 
 public class UniqueNumberWriter implements Shutdownable {
 	private final String fileName;

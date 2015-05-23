@@ -1,4 +1,4 @@
-package com.swehner.newrelic.threadpool;
+package com.navimont.ninedigits.threadpool;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -39,6 +39,9 @@ public class ClosableExecutorService implements Shutdownable {
 		submittedTasks.put(socketReaderTask, executorService.submit(socketReaderTask));
 	}
 
+	/**
+	 *
+	 */
 	public void waitForThreadAvailable() throws ExecutionException, InterruptedException {
 		while (submittedTasks.size() >= maxThreads) {
 			Thread.sleep(10);

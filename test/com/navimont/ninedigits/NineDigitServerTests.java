@@ -1,4 +1,4 @@
-package com.swehner.newrelic;
+package com.navimont.ninedigits;
 
 
 import java.io.BufferedWriter;
@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class NineDigitServerTests {
@@ -42,6 +43,7 @@ public class NineDigitServerTests {
 		Thread.sleep(1000000);
 	}
 
+	@Ignore // used for manual testing
 	@Test
 	public void testOneClientContinuous() throws IOException {
 		startServer();

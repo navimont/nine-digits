@@ -1,4 +1,4 @@
-package com.swehner.newrelic;
+package com.navimont.ninedigits;
 
 
 import static org.junit.Assert.*;

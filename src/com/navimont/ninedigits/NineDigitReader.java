@@ -1,4 +1,4 @@
-package com.swehner.newrelic;
+package com.navimont.ninedigits;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 import java.util.regex.Pattern;
 
-import com.swehner.newrelic.threadpool.CloseableAndRunnable;
-import com.swehner.newrelic.threadpool.Shutdownable;
+import com.navimont.ninedigits.threadpool.CloseableAndRunnable;
+import com.navimont.ninedigits.threadpool.Shutdownable;
 
 public class NineDigitReader extends CloseableAndRunnable {
 	private UniqueNumberWriter uniqueNumberWriter;

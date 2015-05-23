@@ -1,4 +1,4 @@
-package com.swehner.newrelic.threadpool;
+package com.navimont.ninedigits.threadpool;
 
 
 public interface Shutdownable {
