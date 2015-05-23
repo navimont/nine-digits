@@ -71,6 +71,8 @@ public class UniqueNumberWriter implements Shutdownable {
 	}
 
 	public void write(String number) throws InterruptedException {
+        // avoid any issues with concurrent access to the BitSet and the output file
+        // by putting the input into a queue
 		queue.put(number);
 	}
 

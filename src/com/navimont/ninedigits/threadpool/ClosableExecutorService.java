@@ -37,10 +37,11 @@ public class ClosableExecutorService implements Shutdownable {
 
 	public void submit(CloseableAndRunnable socketReaderTask) {
 		submittedTasks.put(socketReaderTask, executorService.submit(socketReaderTask));
-	}
+        System.out.println("clients connected: "+submittedTasks.size());
+    }
 
 	/**
-	 *
+	 * if all threads are occupied, this method will block until a client disconnects
 	 */
 	public void waitForThreadAvailable() throws ExecutionException, InterruptedException {
 		while (submittedTasks.size() >= maxThreads) {

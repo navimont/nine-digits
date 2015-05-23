@@ -16,10 +16,13 @@ public class NineDigitServer {
 	private static ClosableExecutorService threadPool = new ClosableExecutorService(MAX_CONNECTIONS);
 	private static ExecutorService listenerThread = Executors.newSingleThreadExecutor();
 
+    /**
+     * Create a thread pool and wait for connections on the port LISTENER_PORT.
+     * Incoming connections are handled by NineDigitReader class.
+     */
 	public static void main(String[] args) throws Exception {
 		final ServerSocket listener = new ServerSocket(LISTENER_PORT);
 		final UniqueNumberWriter writer = new UniqueNumberWriter(OUTPUT_FILE);
-		int millisSinceLastReport = 0;
 
 		// need separate listener thread to be able to interrupt socket server listener when application is terminating
 		listenerThread.submit(new Runnable() {
@@ -38,6 +41,7 @@ public class NineDigitServer {
 			}
 		});
 
+        int millisSinceLastReport = 0;
 		while (!threadPool.isShutdown()) {
 			if (millisSinceLastReport > 10000) {
 				System.out.println(writer.getStatus());
